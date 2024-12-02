@@ -30,7 +30,7 @@ mongoose.connection.on("disconnected",()=>{
     console.log("MongoDB disconnected!")
 })
 
-const port =5000;
+const port = process.env.PORT;
 app.listen(port,()=>{
      connect();
     console.log(`connected to ${port} backend`)
