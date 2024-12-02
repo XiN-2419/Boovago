@@ -14,16 +14,14 @@ import cors from "cors"
 const app = express()
 dotenv.config()
 
-const connect = async () => { 
-    try { 
-        await mongoose.connect(process.env.MONGODB, { 
-            useNewUrlParser: true, 
-            useUnifiedTopology: true 
-        }); 
-        console.log("Connected to mongoDB"); 
-    } catch (error) { 
-        console.error("Error connecting to mongoDB:", error); 
-    }}
+const connect = async() => {
+    try{
+     await mongoose.connect(process.env.MONGODB)
+        console.log("Connected to mongoDB")
+    }catch(error){
+        console.error("Error connecting to mongoDB:", error);
+    }
+}
 
 mongoose.connection.on("connected",()=>{
     console.log("MongoDB connected!")
