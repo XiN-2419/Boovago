@@ -1,0 +1,67 @@
+.hotelTable {
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: normal;
+    border: none;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+    background-color: white;
+    td {
+        text-align: center;
+        padding: 8px;
+        border-right: 1px solid #f8f8f8;
+        font-size: 12px;
+    }
+    th {
+        text-align: center;
+        padding: 8px;
+        color: #ffffff;
+        background: #4FC3A1;
+    }
+    thead {
+        th {
+            color: #ffffff;
+            background: #4FC3A1;
+            :nth-child(odd) {
+                color: #ffffff;
+                background: #324960;
+            }
+        }
+    }
+    tr:nth-child(even) {
+        background: #F8F8F8;
+    }
+}
+
+.dbButtonStyle {
+    box-shadow: 0 0 0 .1em inset var(--c); 
+    --_g: linear-gradient(var(--c) 0 0) no-repeat;
+    background: 
+      var(--_g) calc(var(--_p,0%) - 100%) 0%,
+      var(--_g) calc(200% - var(--_p,0%)) 0%,
+      var(--_g) calc(var(--_p,0%) - 100%) 100%,
+      var(--_g) calc(200% - var(--_p,0%)) 100%;
+    background-size: 50.5% calc(var(--_p,0%)/2 + .5%);
+    outline-offset: .1em;
+    transition: background-size .4s, background-position 0s .4s;
+    font-weight: bold;
+    cursor: pointer;
+    width: 40%;
+  }
+  .dbButtonStyle:hover {
+    --_p: 100%;
+    transition: background-position .4s, background-size 0s;
+  }
+  .dbButtonStyle:active {
+    box-shadow: 0 0 9e9q inset #0009; 
+    background-color: var(--c);
+    color: #fff;
+  }
+.modifyButton {
+    --c:  #E9D502;
+}
+.deleteButton{
+    --c:  #AC1D1B;
+}

@@ -1,0 +1,95 @@
+.admionHotelContainer {
+    width: 100%;
+    .admionHotelContainer-sidebar{
+        position: fixed;
+        width: 15%;
+        height: 100vh;
+        background: #4FC3A1;
+        font-size: 16px;
+        .admionHotelContainer-nav{
+            position: relative;
+            margin: 0 15%;
+            top: 5%;
+            text-align: right;
+            font-weight: bold;
+            ul {
+                list-style: none;
+                li {
+                    position: relative;
+                    margin: 1.5em 0;
+                    cursor: pointer;
+                    span {
+                        line-height: 2.5em;
+                        letter-spacing: 0.5em;
+                        color: rgba(#FFF, 0.6);
+                        display: block;
+                        transition: all ease-out 300ms;
+                    }
+                    &.active span {
+                        color: white;
+                    }
+                    &:not(.active)::after {
+                        opacity: 0.2;
+                    }
+                    &:not(.active):hover span {
+                        color: rgba(#FFF, 1);
+                    }
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        width: 100%;
+                        height: 0.2em;
+                        background: black;
+                        left: 0;
+                        bottom: 0;
+                        background-image: linear-gradient(to right, #5e42a6, #b74e91)
+                    }
+                }
+
+            }
+        }
+    }
+    .admionHotelContainer-main {
+        position: relative;
+        width: 85%;
+        height: 100vh;
+        background: #4FC3A1;
+        float: right;
+        .adminHotelContainer-db{
+            position: relative;
+            top: 10%;
+        }
+    }
+    
+}
+
+.addbutton {
+    --c:  #229091; /* the color*/
+    box-shadow: 0 0 0 .1em inset var(--c); 
+    --_g: linear-gradient(var(--c) 0 0) no-repeat;
+    background: 
+      var(--_g) calc(var(--_p,0%) - 100%) 0%,
+      var(--_g) calc(200% - var(--_p,0%)) 0%,
+      var(--_g) calc(var(--_p,0%) - 100%) 100%,
+      var(--_g) calc(200% - var(--_p,0%)) 100%;
+    background-size: 50.5% calc(var(--_p,0%)/2 + .5%);
+    background-color: #e3e3e3;
+    outline-offset: .1em;
+    transition: background-size .4s, background-position 0s .4s;
+    width: 120px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .addbutton:hover {
+    --_p: 100%;
+    transition: background-position .4s, background-size 0s;
+  }
+  .addbutton:active {
+    box-shadow: 0 0 9e9q inset #0009; 
+    background-color: var(--c);
+    color: #fff;
+  }
