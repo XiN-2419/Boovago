@@ -1,6 +1,6 @@
 import { useState,useEffect } from "react";
 import "./adminAll.scss"
-import axios from "../../axiosConfig"
+import axios from "axios"
 
 import EditHotel from "./EditHotel"
 
@@ -9,7 +9,7 @@ const AllHotels = () => {
     const [hotels,setHotels] = useState([]);
     const adminGetHotels = async () => {
         try {
-            const response = await axios.get("/hotels");
+            const response = await axios.get("https://boovago.onrender.com/api/v1/hotels");
             setHotels(response.data);
         } catch (err) {
             console.error(err.message);
@@ -18,7 +18,7 @@ const AllHotels = () => {
 
     const adminDeletehotel = async id => {
         try {
-            const adminDeleteHotel = await axios.delete(`/hotels/${id}`);
+            const adminDeleteHotel = await axios.delete(`https://boovago.onrender.com/api/v1/hotels/${id}`);
             adminGetHotels();
         } catch (err) {
             console.error(err.message);

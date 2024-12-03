@@ -27,7 +27,7 @@ const HotelsList = () => {
   const [highestPrice, setHighestPrice] = useState("");
 
 const searchUrl = 
- `/hotels?${destination ? "city=" + destination : "popularHotel=true"}&lowestPrice=${lowestPrice}&highestPrice=${highestPrice}`
+ `https://boovago.onrender.com/api/v1/hotels?${destination ? "city=" + destination : "popularHotel=true"}&lowestPrice=${lowestPrice}&highestPrice=${highestPrice}`
 
 const [fetchDataUrl,setFetchDataUrl]=useState(searchUrl)//useFetch要能夠重新搜尋就改動url讓他可以重整
 const {data,loading,error} =useFetch(fetchDataUrl)

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import axios from "../axiosConfig"
+import axios from "axios"
 
  const useFetch = (url) => {
     const [data, setData]=useState([]);

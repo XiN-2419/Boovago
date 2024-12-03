@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import axios from "../axiosConfig"
+import axios from "axios"
 
  const useCreateOrder = (url,orderData,createOrderState) => {
     const [Order, setOrder]=useState([]);

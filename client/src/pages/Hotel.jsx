@@ -21,7 +21,7 @@ const Hotel = () => {
 
   const [sliderIndex, setSiderIndex] = useState(0);
   const [openSlider, setOpenSlider] = useState(false);
-  const { data, loading, error } = useFetch(`/hotels/find/${hotelid}`)
+  const { data, loading, error } = useFetch(`https://boovago.onrender.com/api/v1/hotels/find/${hotelid}`)
   console.log(data)
   let comments = useRef(null)
   const clickSlider = (index) => {

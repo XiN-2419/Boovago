@@ -1,4 +1,4 @@
-import axios from '../axiosConfig'
+import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import Navbar from '../components/Navbar'
@@ -37,7 +37,7 @@ const navigate = useNavigate()
   const handleClick = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("/auth/register", registerData)
+      const res = await axios.post("https://boovago.onrender.com/api/v1/auth/register", registerData)
       navigate("/login",res)
     } catch (error) {
       setError(error.response.data.message)
