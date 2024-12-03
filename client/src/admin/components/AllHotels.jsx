@@ -1,6 +1,6 @@
 import { useState,useEffect } from "react";
 import "./adminAll.scss"
-import axios from "axios"
+import axios from "../../axiosConfig"
 
 import EditHotel from "./EditHotel"
 

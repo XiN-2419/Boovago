@@ -16,7 +16,7 @@ const AddUser = () => {
     const onSubmitForm = async (e) => {
         e.preventDefault();
         try {
-            const res = await fetch("/auth/register", {
+            const res = await fetch("https://boovago.onrender.com/api/v1/auth/register", {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify(adminNewUser)

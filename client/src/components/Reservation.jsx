@@ -8,7 +8,7 @@ import useFetch from '../hooks/useFetch'
 import "./reservation.scss"
 import { motion } from "framer-motion";
 import { LoginContext } from '../context/LoginContext'
-import axios from 'axios'
+import axios from '../axiosConfig'
 import { ReservationDatesList } from '../datesCalculate'
 import useCreateOrder from '../hooks/useCreateOrder'
 import { useNavigate } from 'react-router-dom'

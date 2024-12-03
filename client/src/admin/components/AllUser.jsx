@@ -1,6 +1,6 @@
 import { useState,useEffect } from "react";
 import "./adminAll.scss"
-import axios from "axios"
+import axios from "../../axiosConfig"
 
 
 const AllUser = () => {
@@ -37,7 +37,6 @@ const AllUser = () => {
                     <th>使用者電子信箱</th>
                     <th>使用者密碼(保護顯示)</th>
                     <th>使用者是否為管理者</th>
-                    <th>修改</th>
                     <th>刪除</th>
                 </tr>
             </thead>
@@ -49,7 +48,6 @@ const AllUser = () => {
                         <td>{e.email}</td>
                         <td>{e.password}</td>
                         <td>{e.isAdmin === true ? "V" : ""}</td>
-                        <td></td>
                         <td><button className="dbButtonStyle deleteButton" onClick={() => adminDeleteUser(e._id)}>刪除</button></td>
                     </tr>
                 ))
