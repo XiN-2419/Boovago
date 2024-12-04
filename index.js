@@ -12,21 +12,6 @@ import orderApiRoute from "./ApiRoutes/order.js"
 import cookieParser from "cookie-parser"
 import cors from "cors"
 
-const allowedOrigins = ['https://boovago-frontend.onrender.com'];
-app.use(cors({
-    origin: function(origin, callback) {
-      if (!origin || allowedOrigins.indexOf(origin) !== -1) {
-        callback(null, true);
-      } else {
-        callback(new Error('Not allowed by CORS'));
-      }
-    },
-    methods: 'GET,POST,PUT,DELETE,OPTIONS',
-    allowedHeaders: 'Content-Type,Authorization',
-    credentials: true
-  }));
-  
-
 const app = express()
 dotenv.config()
 
@@ -45,6 +30,24 @@ mongoose.connection.on("connected",()=>{
 mongoose.connection.on("disconnected",()=>{
     console.log("MongoDB disconnected!")
 })
+
+const allowedOrigins = [ 
+    'https://boovago-frontend.onrender.com', 
+    'https://api.render.com/deploy/srv-ct801223esus73a31un0?key=a1EEeRo8yhk', 
+    '0.0.0'
+];
+app.use(cors({
+    origin: function(origin, callback) {
+      if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
+    methods: 'GET,POST,PUT,DELETE,OPTIONS',
+    allowedHeaders: 'Content-Type,Authorization',
+    credentials: true
+  }));
 
 const port = process.env.PORT;
 app.listen(port,()=>{
