@@ -31,23 +31,13 @@ mongoose.connection.on("disconnected",()=>{
     console.log("MongoDB disconnected!")
 })
 
-const allowedOrigins = [ 
-    'https://boovago-frontend.onrender.com', 
-    'https://api.render.com/deploy/srv-ct801223esus73a31un0?key=a1EEeRo8yhk', 
-    '0.0.0'
-];
-app.use(cors({
-    origin: function(origin, callback) {
-      if (!origin || allowedOrigins.indexOf(origin) !== -1) {
-        callback(null, true);
-      } else {
-        callback(new Error('Not allowed by CORS'));
-      }
-    },
-    methods: 'GET,POST,PUT,DELETE,OPTIONS',
-    allowedHeaders: 'Content-Type,Authorization',
-    credentials: true
-  }));
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', 'https://boovago-frontend.onrender.com'); // Allow requests from your frontend
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS'); // Specify allowed methods
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization'); // Specify allowed headers
+    res.setHeader('Access-Control-Allow-Credentials', 'true'); // If you need to send cookies
+    next();
+  });
 
 const port = process.env.PORT;
 app.listen(port,()=>{
