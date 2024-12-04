@@ -7,10 +7,10 @@ import "./feature.scss"
 import useFetch from '../hooks/useFetch'
 const Feature = () => {
     
-    const {data,loading,error} =useFetch("https://boovago.onrender.com/api/v1/hotels?popularHotel=true")
+    const {data,loading,error} =useFetch("https://boovago-ljor.onrender.com/api/v1/hotels?popularHotel=true")
 
-    const typeUrl=`https://boovago.onrender.com/api/v1//hotels/amountoftype?type=${CategoriesType.map((type)=>type.name)}`
-    const citiesUrl=`https://boovago.onrender.com/api/v1/hotels/amountofcities?cities=${CategoriesCities.map((city)=>city.name)}`
+    const typeUrl=`https://boovago-ljor.onrender.com/api/v1//hotels/amountoftype?type=${CategoriesType.map((type)=>type.name)}`
+    const citiesUrl=`https://boovago-ljor.onrender.com/api/v1/hotels/amountofcities?cities=${CategoriesCities.map((city)=>city.name)}`
     return (
         <div className='feature'>
             <div className="container">

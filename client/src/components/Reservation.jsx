@@ -14,7 +14,7 @@ import useCreateOrder from '../hooks/useCreateOrder'
 import { useNavigate } from 'react-router-dom'
 
 const Reservation = ({ openSetting, hotelid, DatesLength }) => {
-    const { data, loading, error } = useFetch(`https://boovago.onrender.com/api/v1/rooms/findHotel/${hotelid}`)
+    const { data, loading, error } = useFetch(`https://boovago-ljor.onrender.com/api/v1/rooms/findHotel/${hotelid}`)
     const { date, options } = useContext(OptionsContext)
     const { user } = useContext(LoginContext)
 
@@ -58,7 +58,7 @@ const Reservation = ({ openSetting, hotelid, DatesLength }) => {
         try {
           await Promise.all(
             roomNumber.map((roomNumberId) => {
-              const res = axios.put(`https://boovago.onrender.com/api/v1/rooms/reservartiondates/${roomNumberId}`, {
+              const res = axios.put(`https://boovago-ljor.onrender.com/api/v1/rooms/reservartiondates/${roomNumberId}`, {
                 dates: datesList,
               });
             })

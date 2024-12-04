@@ -23,7 +23,7 @@ const Login = () => {
         e.preventDefault();
         dispatch({type:start_login})//
         try{
-            const res = await axios.post("https://boovago.onrender.com/api/v1/auth/login",loginData)
+            const res = await axios.post("https://boovago-ljor.onrender.com/api/v1/auth/login",loginData)
             dispatch({type:login_success,payload:res.data.userDetails})
             navigate("/")
         }catch(error){

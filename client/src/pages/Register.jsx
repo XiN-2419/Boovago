@@ -37,7 +37,7 @@ const navigate = useNavigate()
   const handleClick = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("https://boovago.onrender.com/api/v1/auth/register", registerData)
+      const res = await axios.post("https://boovago-ljor.onrender.com/api/v1/auth/register", registerData)
       navigate("/login",res)
     } catch (error) {
       setError(error.response.data.message)

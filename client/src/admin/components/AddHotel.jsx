@@ -21,7 +21,7 @@ const AddHotel = () => {
     const onSubmitForm = async (e) => {
         e.preventDefault();
         try {
-            const res = await fetch("https://boovago.onrender.com/api/v1/hotels", {
+            const res = await fetch("https://boovago-ljor.onrender.com/api/v1/hotels", {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify(adminNewHotel)

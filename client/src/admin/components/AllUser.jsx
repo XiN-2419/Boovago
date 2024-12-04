@@ -8,7 +8,7 @@ const AllUser = () => {
     const [user,setUser] = useState([]);
     const adminGetUser = async () => {
         try {
-            const response = await axios.get("https://boovago.onrender.com/api/v1/users");
+            const response = await axios.get("https://boovago-ljor.onrender.com/api/v1/users");
             setUser(response.data);
             console.log(response.data);
         } catch (err) {
@@ -18,7 +18,7 @@ const AllUser = () => {
 
     const adminDeleteUser = async id => {
         try {
-            const adminDeleteUser = await axios.delete(`https://boovago.onrender.com/api/v1/users/${id}`);
+            const adminDeleteUser = await axios.delete(`https://boovago-ljor.onrender.com/api/v1/users/${id}`);
             adminGetUser();
         } catch (err) {
             console.error(err.message);
