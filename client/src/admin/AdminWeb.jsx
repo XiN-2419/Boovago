@@ -49,6 +49,11 @@ const AdminWeb = () => {
           <ul>
             <li className={selectActive==="1"? "active":""} onClick={()=>{changeAdminPage("1")}}><span>飯店總覽</span></li>
             <li className={selectActive==="4"? "active":""} onClick={()=>{changeAdminPage("4")}}><span>用戶總覽</span></li>
+            <li><spna>
+              <Link to="/">
+                  返回首頁
+              </Link>
+            </spna></li>
           </ul>
         </nav>       
       </div>
