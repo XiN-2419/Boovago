@@ -73,7 +73,6 @@ const handleCounter = (name, sign) => {
                     ranges={dates}
                     className="date"
                     minDate={new Date()}
-                    locale={locales['zhTW']}
                   />}
                 </span>
               </div>

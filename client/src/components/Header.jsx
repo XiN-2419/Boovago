@@ -63,7 +63,6 @@ const handleSearchBarSubmit =()=>{
               className="calendar"
               ranges={dates}
               minDate={new Date()}
-              locale={locales['zhTW']}
             />}
           </div>
           <div className="SearchBarItem">
